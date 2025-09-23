@@ -1,293 +1,354 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mrunmay Kanade - Data Analyst Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mrunmay Kanade — Data Analyst Portfolio</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="description" content="Mrunmay Kanade — Data Analyst portfolio. SQL, Power BI, Python, Excel. Dashboards, analytics projects and resume." />
   <style>
-    /* ---------- Global Styles ---------- */
-    body {
+    :root{
+      --accent: #29d0b2;
+      --accent-2: #4ee0c5;
+      --bg1: #071126;
+      --bg2: #0f2936;
+      --card: rgba(255,255,255,0.95);
+      --glass: rgba(255,255,255,0.06);
+      --muted: #9aa7b2;
+      --maxw: 1100px;
+      --radius: 14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
       margin:0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height:1.6;
-      color:#333;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      background-attachment: fixed;
-    }
-    header {
-      background:rgba(0,0,0,0.7);
-      color:#fff;
-      padding:2rem 0;
-      text-align:center;
-      animation: fadeIn 2s ease-in-out;
-    }
-    header h1 {margin:0;font-size:2.8rem;}
-    header p {font-size:1.2rem;margin:.5rem 0 1rem;}
-    nav {text-align:center;margin-top:1rem;}
-    nav a {
-      color:#4ee0c5;
-      text-decoration:none;
-      margin:0 1rem;
-      font-weight:bold;
-      transition:color .3s;
-    }
-    nav a:hover {color:#fff;}
-    section {
-      padding:3rem 1rem;
-      max-width:1100px;
-      margin:auto;
-      animation: fadeUp 1.2s ease-in-out;
-    }
-    section h2 {
-      text-align:center;
-      margin-bottom:2rem;
-      color:#fff;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:#e6f0f2;
+      background: linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 60%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding-bottom:60px;
     }
 
-    /* ---------- Card Layout ---------- */
-    .skills,.projects,.certs,.experience {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:1.5rem;
-    }
-    .card {
-      background:rgba(255,255,255,0.9);
-      padding:1.5rem;
-      border-radius:12px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.2);
-      transition: transform .3s, box-shadow .3s;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow:0 10px 20px rgba(0,0,0,0.3);
-    }
-    .card h3 {margin-top:0;color:#203a43;}
-    .card img {max-width:100%;border-radius:8px;}
+    /* Container */
+    .container{max-width:var(--maxw);margin:0 auto;padding:36px 20px}
 
-    /* ---------- Buttons ---------- */
-    .btn {
-      display:inline-block;
-      padding:.6rem 1.2rem;
-      margin:.5rem;
-      border-radius:6px;
-      background:#4ee0c5;
-      color:#222;
-      font-weight:bold;
-      text-decoration:none;
-      transition: background .3s, transform .3s;
+    /* Header / Hero */
+    header{display:flex;align-items:center;gap:18px;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:14px;align-items:center}
+    .avatar{width:72px;height:72px;border-radius:12px;object-fit:cover;border:3px solid rgba(255,255,255,0.06);box-shadow:0 6px 20px rgba(0,0,0,0.5)}
+    .brand h1{font-size:1.25rem;margin:0;color:#fff}
+    .brand p{margin:0;font-size:.85rem;color:var(--muted)}
+    nav.top{display:flex;gap:10px}
+    nav.top a{color:var(--accent-2);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+    nav.top a:hover{background:rgba(255,255,255,0.03);color:#fff}
+
+    /* Hero card */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;margin-top:18px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:28px;border-radius:var(--radius);backdrop-filter: blur(6px);box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+    .hero-card h2{color:#fff;margin:0 0 8px;font-size:1.6rem}
+    .hero-card p.lead{color:var(--muted);margin:0 0 16px}
+    .cta{display:flex;gap:10px}
+    .btn{background:var(--accent);color:#04202a;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent-2)}
+
+    /* Right preview */
+    .preview-card{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));text-align:center}
+    .preview-card img{width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+    .small-meta{font-size:.85rem;color:var(--muted)}
+
+    /* Sections */
+    section{margin-top:34px}
+    section h3{color:#fff;margin:0 0 14px}
+
+    /* Grid cards */
+    .grid{display:grid;gap:14px}
+    .skills-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .projects-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+
+    .card{
+      background:var(--card);color:#05252b;padding:18px;border-radius:12px;position:relative;overflow:hidden;box-shadow:0 8px 20px rgba(2,6,23,0.45);transition:transform .35s cubic-bezier(.2,.9,.3,1), box-shadow .35s;
     }
-    .btn:hover {
-      background:#36b7a8;
-      transform: scale(1.05);
+    .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(2,6,23,0.55)}
+    .card h4{margin:0 0 6px}
+    .card p{margin:0;color:#355255}
+
+    /* Skill tile */
+    .skill{
+      display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,255,255,0.96));cursor:pointer;transition:transform .25s ease, box-shadow .25s ease
+    }
+    .skill .icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;background:linear-gradient(180deg,var(--accent-2),var(--accent));color:#04202a}
+    .skill h5{margin:0;font-size:1rem}
+    .skill p{margin:2px 0 0;font-size:.85rem;color:#56797a}
+
+    /* Hover preview pane (for skills/projects) */
+    .preview-pane{
+      position:absolute;right:18px;top:18px;bottom:18px;width:48%;max-width:420px;background:linear-gradient(180deg, rgba(4,32,36,0.98), rgba(6,40,44,0.98));color:#d9f6f0;border-radius:10px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,0.6);opacity:0;transform:translateY(8px) scale(.98);pointer-events:none;transition:all .28s cubic-bezier(.2,.9,.3,1)}
+    .card.show-preview .preview-pane{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+    .preview-pane img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:8px}
+    .preview-pane h4{margin:0 0 6px}
+    .preview-pane p{margin:0;font-size:.92rem;color:#bbefe6}
+
+    /* Project image */
+    .project-thumb{width:100%;height:160px;object-fit:cover;border-radius:8px;border:1px solid rgba(0,0,0,0.05)}
+
+    /* subtle entrance animation */
+    .fade-up{opacity:0;transform:translateY(14px);animation:fadeUp .6s forwards}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+
+    /* footer */
+    footer{margin-top:42px;text-align:center;color:var(--muted);padding:20px 0}
+
+    /* Responsive */
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr}
+      .preview-pane{position:static;width:100%;max-width:100%;margin-top:12px}
+      .card{overflow:visible}
     }
 
-    footer {
-      text-align:center;
-      padding:2rem;
-      background:rgba(0,0,0,0.7);
-      color:#fff;
-      margin-top:2rem;
-    }
+    /* accessibility focus */
+    a:focus{outline:3px solid rgba(46,208,178,0.14);outline-offset:3px}
 
-    /* ---------- Animations ---------- */
-    @keyframes fadeIn {
-      from {opacity:0;transform:translateY(-20px);}
-      to {opacity:1;transform:translateY(0);}
-    }
-    @keyframes fadeUp {
-      from {opacity:0;transform:translateY(40px);}
-      to {opacity:1;transform:translateY(0);}
-    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Mrunmay Nilesh Kanade</h1>
-    <p>Data Analyst | MBA (Business Analytics)</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#certs">Certifications</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="profile.jpg" alt="Mrunmay" class="avatar" loading="lazy">
+        <div>
+          <h1>Mrunmay Nilesh Kanade</h1>
+          <p>Data Analyst · MBA (Business Analytics)</p>
+        </div>
+      </div>
+      <nav class="top" aria-label="primary navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div style="text-align:center">
-      <img src="profile.jpg" alt="Mrunmay Kanade"
-           style="width:200px;height:200px;object-fit:cover;
-                  border-radius:50%;border:4px solid #4ee0c5;
-                  box-shadow:0 6px 18px rgba(0,0,0,0.4);
-                  margin-bottom:1rem;">
-    </div>
-    <p style="color:#fff;text-align:center;max-width:800px;margin:auto;">
-      Hello! I'm <b>Mrunmay Nilesh Kanade</b>, an MBA candidate specializing in <b>Business Analytics</b>. Skilled in SQL, Power BI, Excel, and Python, 
-      I focus on transforming raw data into actionable business insights and building dashboards that empower decision making.
-    </p>
-  </section>
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <h2>Hi — I'm Mrunmay.</h2>
+          <p class="lead">I turn data into clear, actionable dashboards and models. I work with SQL, Power BI, Python and Excel to build reports that drive decisions.</p>
+          <div class="cta">
+            <a class="btn" href="Mrunmay.pdf" download>Download Resume</a>
+            <a class="btn secondary" href="mailto:mrunmaykanade4@gmail.com">Contact</a>
+          </div>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="card"><h3><i class="fa-solid fa-database"></i> SQL & Databases</h3><p>MySQL, SQL Workbench, joins, CTEs, queries.</p></div>
-      <div class="card"><h3><i class="fa-solid fa-chart-line"></i> Data Visualization</h3><p>Power BI, Tableau, custom DAX measures.</p></div>
-      <div class="card"><h3><i class="fa-brands fa-python"></i> Python</h3><p>Pandas, NumPy, Matplotlib, Seaborn.</p></div>
-      <div class="card"><h3><i class="fa-solid fa-table"></i> Excel</h3><p>Advanced Excel, Pivot tables, automation.</p></div>
-    </div>
-  </section>
+          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+            <div class="card" style="flex:1;min-width:160px">
+              <h4>Available for internships &amp; contract roles</h4>
+              <p style="color:#356b63;margin-top:8px">Open to data analysis roles — dashboards, reporting automation, and exploratory analysis.</p>
+            </div>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <!-- Existing projects -->
-      <div class="card">
-        <h3>Sales Data Analysis (Power BI)</h3>
-        <img src="proj-sales.png" alt="Power BI Dashboard Preview">
-        <p>Built interactive dashboards with custom DAX measures, improving visibility of performance trends by 35%.</p>
-        <a class="btn" href="Sales%20Data%20analysis%20by%20Mrunmay.pbix" download>Download Power BI Project</a>
-      </div>
+            <div class="card" style="flex-basis:220px;min-width:220px">
+              <h4>Key tools</h4>
+              <p style="color:#356b63;margin-top:8px">Power BI · MySQL · Python · Excel · DAX · SQL</p>
+            </div>
+          </div>
+        </div>
 
-      <div class="card">
-        <h3>E-Commerce Analysis (SQL)</h3>
-        <img src="proj-sql.png" alt="SQL Analysis Preview">
-        <p>Analyzed 10,000+ e-commerce transactions using advanced SQL (joins, CTEs, window functions). Identified top products, high-value customers, and seasonal sales trends, boosting ROI by 10%.</p>
-        <a class="btn" href="Ecommerce_Analysis.sql" download>Download SQL Project</a>
-      </div>
+        <aside class="preview-card">
+          <img src="resume-preview.png" alt="Resume preview" loading="lazy">
+          <div class="small-meta">Resume • MBA (Business Analytics)</div>
+        </aside>
+      </section>
 
-      <div class="card">
-        <h3>Q-Commerce Market Dynamics</h3>
-        <img src="proj-qcommerce.png" alt="Q-Commerce Insights Preview">
-        <p>Researched consumer behavior in Q-Commerce using Excel & Power BI; delivered strategic insights for market growth.</p>
-        <a class="btn" href="Q-Commerce’s%20Data%20Analysis.pdf" download>Download Report</a>
-      </div>
+      <!-- Skills -->
+      <section id="skills">
+        <h3>Skills</h3>
+        <div class="grid skills-grid fade-up">
 
-      <div class="card">
-        <h3>IPL Analysis Dashboard</h3>
-        <img src="proj-ipl.png" alt="IPL Analysis Preview">
-        <p>Created an interactive dashboard analyzing IPL data using Python and Power BI, highlighting player performance and match insights.</p>
-        <a class="btn" href="Project%20IPL%20Analysis.html" target="_blank">View Dashboard</a>
-      </div>
+          <!-- Skill card with hover preview -->
+          <div class="card" tabindex="0" data-preview-img="skill-sql.png" data-preview-title="SQL & Databases" data-preview-desc="Expert in writing optimized SQL queries, building ETL-friendly pipelines, and modeling relational data for reporting.">
+            <div class="skill" role="button" aria-pressed="false">
+              <div class="icon"><i class="fa-solid fa-database"></i></div>
+              <div>
+                <h5>SQL & Databases</h5>
+                <p>MySQL, joins, CTEs, window functions</p>
+              </div>
+            </div>
+            <div class="preview-pane" aria-hidden="true">
+              <img src="skill-sql.png" alt="SQL preview" loading="lazy">
+              <h4>SQL & Databases — AI summary</h4>
+              <p>Efficient SQL developer who crafts robust queries and data models to deliver accurate, production-ready datasets for analytics teams.</p>
+            </div>
+          </div>
 
-      <div class="card">
-        <h3>TATA Motors Desk Research</h3>
-        <img src="proj-tata.png" alt="TATA Desk Research Preview">
-        <p>Conducted detailed desk research on TATA Motors (JLR), covering financials, marketing mix, and distribution strategies.</p>
-        <a class="btn" href="Mrunmay%20final%20Desk.pdf" download>Download Report</a>
-      </div>
+          <div class="card" tabindex="0" data-preview-img="skill-pbi.png" data-preview-title="Data Visualization" data-preview-desc="Designs interactive Power BI dashboards with clear storytelling, KPI-level insights, and optimized DAX calculations.">
+            <div class="skill" role="button">
+              <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div>
+                <h5>Data Visualization</h5>
+                <p>Power BI, Tableau, DAX</p>
+              </div>
+            </div>
+            <div class="preview-pane" aria-hidden="true">
+              <img src="skill-pbi.png" alt="Power BI preview" loading="lazy">
+              <h4>Data Visualization — AI summary</h4>
+              <p>Transforms complex metrics into intuitive dashboards that highlight trends and drive stakeholder decisions with clarity.</p>
+            </div>
+          </div>
 
-      <!-- New AI Adoption Project -->
-      <div class="card">
-        <h3>AI Adoption Across the World</h3>
-        <img src="proj-ai.png" alt="AI Adoption Dashboard Preview">
-        <p>
-          Built an interactive Power BI dashboard and SQL analysis for AI adoption trends across countries, industries, and company sizes.
-          Key insights include top AI tools, industry-wise adoption rates, and enterprise vs startup comparisons.
-        </p>
-        <a class="btn" href="AI%20Data_Adoption%20Across%20World.pbix" download>Download Power BI Project</a>
-        <a class="btn" href="AI_Adoption%20Script.sql" download>Download SQL Script</a>
-      </div>
+          <div class="card" tabindex="0" data-preview-img="skill-python.png" data-preview-title="Python" data-preview-desc="Pandas-first data wrangling, reproducible notebooks, and visual storytelling using Matplotlib/Seaborn.">
+            <div class="skill" role="button">
+              <div class="icon"><i class="fa-brands fa-python"></i></div>
+              <div>
+                <h5>Python</h5>
+                <p>Pandas, NumPy, Matplotlib</p>
+              </div>
+            </div>
+            <div class="preview-pane" aria-hidden="true">
+              <img src="skill-python.png" alt="Python preview" loading="lazy">
+              <h4>Python — AI summary</h4>
+              <p>Applies Python for end-to-end data cleaning, analysis and reproducible EDA — production-ready scripts and notebooks.</p>
+            </div>
+          </div>
 
-      <div class="card">
-  <h3>HR Data Dashboard (Power BI)</h3>
-  <img src="proj-hr.png" alt="HR Data Dashboard Preview">
-  <p>
-    Designed and developed an HR analytics dashboard in Power BI, enabling insights into employee performance, attrition, 
-    demographics, and workforce planning. Enhanced HR decision-making by identifying key trends and KPIs.
-  </p>
-  <a class="btn" href="HR%20DATA%20Dashboard.pbix" download>Download Power BI Project</a>
-</div>
-    </div>
-  </section>
+          <div class="card" tabindex="0" data-preview-img="skill-excel.png" data-preview-title="Excel" data-preview-desc="Advanced pivot tables, formula-based modelling and automation for repeatable MIS reporting.">
+            <div class="skill" role="button">
+              <div class="icon"><i class="fa-solid fa-table-cells"></i></div>
+              <div>
+                <h5>Excel</h5>
+                <p>Pivot tables · VLOOKUP · automation</p>
+              </div>
+            </div>
+            <div class="preview-pane" aria-hidden="true">
+              <img src="skill-excel.png" alt="Excel preview" loading="lazy">
+              <h4>Excel — AI summary</h4>
+              <p>Builds robust Excel models and automated reports that help teams monitor KPIs without manual effort.</p>
+            </div>
+          </div>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="experience">
-      <div class="card">
-        <h3>Data Analyst Intern</h3>
-        <p><b>Technokraft Services LLP.</b> (Aug 2025 – Sep 2025)</p>
-        <ul style="text-align:left">
-          <li>Analyzed and validated 5,000+ records ensuring 100% accuracy.</li>
-          <li>Developed SQL queries and insights using joins, subqueries, and CTEs.</li>
-          <li>Created Power BI dashboards aligned with operations KPIs.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+        </div>
+      </section>
 
-  <section id="certs">
-    <h2>Certifications</h2>
-    <div class="certs">
-      <!-- Certification cards remain unchanged -->
-      <div class="card">
-        <h3>Business Analysis by Microsoft & LinkedIn</h3>
-        <img src="cert-business-analysis.png" alt="Business Analysis Certificate Preview">
-        <p>Career Essentials in Business Analysis.</p>
-        <a class="btn" href="Business%20Analysis%20by%20Microsoft%20and%20LinkedIn.pdf" download>Download Certificate</a>
-      </div>
-      <div class="card">
-        <h3>Career Essentials in GitHub</h3>
-        <img src="cert-github.png" alt="GitHub Certificate Preview">
-        <p>GitHub Professional Certificate Program.</p>
-        <a class="btn" href="Career%20Essentials%20in%20GitHub%20Professional%20Certificate.pdf" download>Download Certificate</a>
-      </div>
-      <div class="card">
-        <h3>Data Analysis by Microsoft & LinkedIn</h3>
-        <img src="cert-data-analysis.png" alt="Data Analysis Certificate Preview">
-        <p>Career Essentials in Data Analysis.</p>
-        <a class="btn" href="Data%20Analysis%20by%20Microsoft%20and%20LinkedIn.pdf" download>Download Certificate</a>
-      </div>
-      <div class="card">
-        <h3>Deloitte – Data Analytics Job Simulation</h3>
-        <img src="cert-deloitte.png" alt="Deloitte Certificate Preview">
-        <p>Completed July 23, 2025 | Skills: Data Analysis, Forensic Technology.</p>
-        <a class="btn" href="Deloitte%20Certificate.pdf" download>Download Certificate</a>
-      </div>
-      <div class="card">
-        <h3>Microsoft Azure AI Essentials</h3>
-        <img src="cert-azure-ai.png" alt="Azure AI Essentials Certificate Preview">
-        <p>Completed May 30, 2025 | Skills: Machine Learning, Azure AI Studio, Generative AI.</p>
-        <a class="btn" href="Microsoft%20Azure%20AI%20Essentials%20Professional%20Certificate%20by%20Microsoft%20and%20LinkedIn.pdf" download>Download Certificate</a>
-      </div>
-      <div class="card">
-        <h3>TATA – GenAI Powered Data Analytics Job Simulation</h3>
-        <img src="cert-tata.png" alt="TATA Internship Certificate Preview">
-        <p>Completed July 25, 2025 | Skills: EDA & Risk Profiling, AI Predictions, Data Storytelling, Collections Strategy.</p>
-        <a class="btn" href="TATA%20Internship.pdf" download>Download Certificate</a>
-      </div>
-    </div>
-  </section>
-  
-  <section id="resume">
-    <h2>Resume</h2>
-    <div class="card" style="max-width:800px;margin:auto;">
-      <h3>Mrunmay Kanade - Resume</h3>
-      <img src="resume-preview.png" alt="Resume Preview" style="width:100%;height:auto;border-radius:10px;margin-bottom:1rem;">
-      <a class="btn" href="Mrunmay.pdf" download>Download Resume</a>
-    <a class="btn" href="Mrunmay.pdf" target="_blank">View Resume</a>
-    </div>
-  </section>
+      <!-- Projects -->
+      <section id="projects">
+        <h3>Selected Projects</h3>
+        <div class="grid projects-grid fade-up">
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p style="text-align:center">Feel free to connect with me via email or LinkedIn.</p>
-    <p style="text-align:center">
-      <a class="btn" href="mailto:mrunmaykanade4@gmail.com">Email Me</a>
-      <a class="btn" href="https://github.com/Mrunmay08" target="_blank">GitHub</a>
-      <a class="btn" href="http://linkedin.com/in/mrunmay-kanade-133296368" target="_blank">LinkedIn</a>
-    </p>
-  </section>
-  
-  <footer>
-    <p>© <span id="y"></span> Mrunmay Nilesh Kanade</p>
-  </footer>
+          <article class="card" tabindex="0" data-preview-img="proj-sales.png" data-preview-title="Sales Data Analysis" data-preview-desc="Interactive Power BI dashboards with custom DAX measures showing revenue drivers and funnel metrics.">
+            <img src="proj-sales.png" alt="Sales dashboard" class="project-thumb" loading="lazy">
+            <h4>Sales Data Analysis (Power BI)</h4>
+            <p>Built interactive dashboards, improved visibility of trends by 35%.</p>
+            <div class="preview-pane" aria-hidden="true">
+              <img src="proj-sales.png" alt="Sales preview" loading="lazy">
+              <h4>Sales Data Analysis — AI summary</h4>
+              <p>Developed KPI-driven dashboards that highlight revenue leakages and opportunities; includes cohort analysis and monthly forecasting.</p>
+              <p style="margin-top:8px"><a class="btn" href="Sales%20Data%20analysis%20by%20Mrunmay.pbix" download>Download PBIX</a></p>
+            </div>
+          </article>
+
+          <article class="card" tabindex="0" data-preview-img="proj-sql.png" data-preview-title="E-Commerce Analysis (SQL)" data-preview-desc="Large-scale SQL analysis to find high-value customers and seasonal patterns; produced actionable segments.">
+            <img src="proj-sql.png" alt="E-commerce SQL" class="project-thumb" loading="lazy">
+            <h4>E-Commerce Analysis (SQL)</h4>
+            <p>Analyzed 10,000+ transactions; identified top products and segments.</p>
+            <div class="preview-pane" aria-hidden="true">
+              <img src="proj-sql.png" alt="SQL preview" loading="lazy">
+              <h4>E-Commerce Analysis — AI summary</h4>
+              <p>Used advanced SQL and window functions to calculate AOV, repeat rates and customer LTV, enabling targeted marketing strategies.</p>
+              <p style="margin-top:8px"><a class="btn" href="Ecommerce_Analysis.sql" download>Download SQL</a></p>
+            </div>
+          </article>
+
+          <article class="card" tabindex="0" data-preview-img="proj-ai.png" data-preview-title="AI Adoption Across the World" data-preview-desc="Country-level AI adoption trends with industry segmentation and tool popularity visualized in Power BI.">
+            <img src="proj-ai.png" alt="AI adoption" class="project-thumb" loading="lazy">
+            <h4>AI Adoption Across the World</h4>
+            <p>Power BI + SQL analysis of AI adoption trends across industries.</p>
+            <div class="preview-pane" aria-hidden="true">
+              <img src="proj-ai.png" alt="AI preview" loading="lazy">
+              <h4>AI Adoption — AI summary</h4>
+              <p>Combined multi-source datasets to highlight industry-wise adoption rates and tool preferences; includes benchmarking and actionable recommendations.</p>
+              <p style="margin-top:8px"><a class="btn" href="AI%20Data_Adoption%20Across%20World.pbix" download>Download PBIX</a></p>
+            </div>
+          </article>
+
+          <article class="card" tabindex="0" data-preview-img="proj-ipl.png" data-preview-title="IPL Analysis" data-preview-desc="Player-level and match-level analysis using Python and Power BI to derive performance signals and visual summaries.">
+            <img src="proj-ipl.png" alt="IPL analysis" class="project-thumb" loading="lazy">
+            <h4>IPL Analysis Dashboard</h4>
+            <p>Player performance insights and match analytics.</p>
+            <div class="preview-pane" aria-hidden="true">
+              <img src="proj-ipl.png" alt="IPL preview" loading="lazy">
+              <h4>IPL Analysis — AI summary</h4>
+              <p>Performed player clustering and trend analysis to identify form cycles and team-level performance drivers; includes interactive filters.</p>
+              <p style="margin-top:8px"><a class="btn" href="Project%20IPL%20Analysis.html" target="_blank">View</a></p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Contact / Footer -->
+      <section id="contact">
+        <h3>Contact</h3>
+        <div class="card" style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+          <p style="color:#356b63">Ready to collaborate? Get in touch for internships, freelance gigs, or full-time roles.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="mailto:mrunmaykanade4@gmail.com">Email</a>
+            <a class="btn secondary" href="https://github.com/Mrunmay08" target="_blank">GitHub</a>
+            <a class="btn secondary" href="http://linkedin.com/in/mrunmay-kanade-133296368" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> Mrunmay Nilesh Kanade · Nashik, India
+    </footer>
+  </div>
 
   <script>
-    document.getElementById('y').textContent=new Date().getFullYear();
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hover / focus preview logic
+    // When a .card receives hover or keyboard focus, show its .preview-pane and update content if data- attributes exist.
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      const pane = card.querySelector('.preview-pane');
+      const updatePaneFromData = () => {
+        const img = card.dataset.previewImg;
+        const title = card.dataset.previewTitle;
+        const desc = card.dataset.previewDesc;
+        if(pane && img){
+          const imgEl = pane.querySelector('img');
+          const h4 = pane.querySelector('h4');
+          const p = pane.querySelector('p');
+          if(imgEl) imgEl.src = img;
+          if(h4) h4.textContent = (title || h4.textContent) + ' — AI summary';
+          if(p) p.textContent = desc || p.textContent;
+        }
+      }
+
+      const show = () => { card.classList.add('show-preview'); card.querySelector('.skill')?.setAttribute('aria-pressed','true'); if(pane) pane.setAttribute('aria-hidden','false'); };
+      const hide = () => { card.classList.remove('show-preview'); card.querySelector('.skill')?.setAttribute('aria-pressed','false'); if(pane) pane.setAttribute('aria-hidden','true'); };
+
+      card.addEventListener('mouseenter', () => { updatePaneFromData(); show(); });
+      card.addEventListener('mouseleave', () => { hide(); });
+      card.addEventListener('focusin', () => { updatePaneFromData(); show(); });
+      card.addEventListener('focusout', () => { hide(); });
+
+      // keyboard accessible: toggle on Enter or Space when focused
+      card.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); if(card.classList.contains('show-preview')) hide(); else { updatePaneFromData(); show(); } }
+      });
+    });
+
+    // Simple intersection observer to animate cards into view
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('fade-up'); });
+    }, {threshold:0.08});
+    document.querySelectorAll('.card').forEach(c=> io.observe(c));
+
   </script>
 </body>
 </html>
