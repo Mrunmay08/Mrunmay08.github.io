@@ -6,7 +6,6 @@
   <title>Mrunmay Kanade - Data Analyst Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    /* ---------- Global Styles ---------- */
     body {
       margin:0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -46,7 +45,7 @@
     }
 
     /* ---------- Card Layout ---------- */
-    .skills,.projects,.certs,.experience {
+    .skills,.certs,.experience {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:1.5rem;
@@ -64,6 +63,81 @@
     }
     .card h3 {margin-top:0;color:#203a43;}
     .card img {max-width:100%;border-radius:8px;}
+
+    /* ---------- Project Cards (New Floating + Tilt Style) ---------- */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+    .project-card {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      height: 230px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      perspective: 1000px;
+    }
+    .project-card:hover {
+      transform: scale(1.05) rotateY(8deg) rotateX(4deg);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(17, 24, 39, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+    .project-text {
+      color: #fff;
+      text-align: center;
+      animation: fadeInUp 0.6s ease;
+      max-width: 80%;
+    }
+    .project-text h3 {font-size: 20px;margin-bottom: 12px;}
+    .project-text p {font-size: 14px;margin-bottom: 15px;line-height: 1.4;}
+    .project-text a {
+      background: #f59e0b;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+    .project-text a:hover {background: #d97706;}
+
+    /* Floating Animation */
+    .floating {animation: float 3s ease-in-out infinite;}
+    @keyframes float {
+      0%, 100% {transform: translateY(0px);}
+      50% {transform: translateY(-8px);}
+    }
+
+    /* Text Animation */
+    @keyframes fadeInUp {
+      from {opacity: 0;transform: translateY(20px);}
+      to {opacity: 1;transform: translateY(0);}
+    }
 
     /* ---------- Buttons ---------- */
     .btn {
@@ -90,15 +164,8 @@
       margin-top:2rem;
     }
 
-    /* ---------- Animations ---------- */
-    @keyframes fadeIn {
-      from {opacity:0;transform:translateY(-20px);}
-      to {opacity:1;transform:translateY(0);}
-    }
-    @keyframes fadeUp {
-      from {opacity:0;transform:translateY(40px);}
-      to {opacity:1;transform:translateY(0);}
-    }
+    @keyframes fadeIn {from {opacity:0;transform:translateY(-20px);}to {opacity:1;transform:translateY(0);}}
+    @keyframes fadeUp {from {opacity:0;transform:translateY(40px);}to {opacity:1;transform:translateY(0);}}
   </style>
 </head>
 <body>
@@ -143,64 +210,93 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="projects">
-      <!-- Existing projects -->
-      <div class="card">
-        <h3>Sales Data Analysis (Power BI)</h3>
-        <img src="proj-sales.png" alt="Power BI Dashboard Preview">
-        <p>Built interactive dashboards with custom DAX measures, improving visibility of performance trends by 35%.</p>
-        <a class="btn" href="Sales%20Data%20analysis%20by%20Mrunmay.pbix" download>Download Power BI Project</a>
+    <div class="portfolio-grid">
+
+      <!-- Project 1: Adidas Sales Analysis -->
+      <div class="project-card floating">
+        <img src="images/adidas_dashboard.png" alt="Adidas Sales Analysis Preview" class="project-image">
+        <div class="project-overlay">
+          <div class="project-text">
+            <h3>Adidas Sales Analysis</h3>
+            <p>Interactive Power BI dashboard analyzing sales, profitability, and market trends with forecasting insights.</p>
+            <a href="projects/Adidas_Data_Analysis.pbix" download>View Project</a>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>E-Commerce Analysis (SQL)</h3>
-        <img src="proj-sql.png" alt="SQL Analysis Preview">
-        <p>Analyzed 10,000+ e-commerce transactions using advanced SQL (joins, CTEs, window functions). Identified top products, high-value customers, and seasonal sales trends, boosting ROI by 10%.</p>
-        <a class="btn" href="Ecommerce_Analysis.sql" download>Download SQL Project</a>
+      <!-- Project 2: Pizza Sales SQL Analysis -->
+      <div class="project-card floating" style="animation-delay: 0.2s;">
+        <img src="images/pizza_dashboard.png" alt="Pizza Sales SQL Analysis Preview" class="project-image">
+        <div class="project-overlay">
+          <div class="project-text">
+            <h3>Pizza Sales Analysis</h3>
+            <p>SQL-based analysis identifying top-selling pizzas, customer preferences, and performance trends.</p>
+            <a href="projects/Pizza_Sales_Analysis.pdf" target="_blank">View Project</a>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Q-Commerce Market Dynamics</h3>
-        <img src="proj-qcommerce.png" alt="Q-Commerce Insights Preview">
-        <p>Researched consumer behavior in Q-Commerce using Excel & Power BI; delivered strategic insights for market growth.</p>
-        <a class="btn" href="Q-Commerce’s%20Data%20Analysis.pdf" download>Download Report</a>
+      <!-- Project 3: Q-Commerce Market Study -->
+      <div class="project-card floating" style="animation-delay: 0.4s;">
+        <img src="images/qcommerce_dashboard.png" alt="Q-Commerce Market Analysis Preview" class="project-image">
+        <div class="project-overlay">
+          <div class="project-text">
+            <h3>Q-Commerce Analysis</h3>
+            <p>Strategic research project on consumer behavior and market dynamics using Excel & Power BI.</p>
+            <a href="projects/Q_Commerce_Analysis.pdf" target="_blank">View Project</a>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>IPL Analysis Dashboard</h3>
-        <img src="proj-ipl.png" alt="IPL Analysis Preview">
-        <p>Created an interactive dashboard analyzing IPL data using Python and Power BI, highlighting player performance and match insights.</p>
-        <a class="btn" href="Project%20IPL%20Analysis.html" target="_blank">View Dashboard</a>
+      <!-- Project 4: IPL Analysis Dashboard -->
+      <div class="project-card floating" style="animation-delay: 0.6s;">
+        <img src="proj-ipl.png" alt="IPL Analysis Preview" class="project-image">
+        <div class="project-overlay">
+          <div class="project-text">
+            <h3>IPL Analysis Dashboard</h3>
+            <p>Interactive dashboard analyzing IPL data using Python and Power BI, highlighting player performance and match insights.</p>
+            <a href="Project%20IPL%20Analysis.html" target="_blank">View Dashboard</a>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>TATA Motors Desk Research</h3>
-        <img src="proj-tata.png" alt="TATA Desk Research Preview">
-        <p>Conducted detailed desk research on TATA Motors (JLR), covering financials, marketing mix, and distribution strategies.</p>
-        <a class="btn" href="Mrunmay%20final%20Desk.pdf" download>Download Report</a>
+      <!-- Project 5: TATA Motors Desk Research -->
+      <div class="project-card floating" style="animation-delay: 0.8s;">
+        <img src="proj-tata.png" alt="TATA Desk Research Preview" class="project-image">
+        <div class="project-overlay">
+          <div class="project-text">
+            <h3>TATA Motors Desk Research</h3>
+            <p>Desk research on TATA Motors (JLR), covering financials, marketing mix, and distribution strategies.</p>
+            <a href="Mrunmay%20final%20Desk.pdf" download>Download Report</a>
+          </div>
+        </div>
       </div>
 
-      <!-- New AI Adoption Project -->
-      <div class="card">
-        <h3>AI Adoption Across the World</h3>
-        <img src="proj-ai.png" alt="AI Adoption Dashboard Preview">
-        <p>
-          Built an interactive Power BI dashboard and SQL analysis for AI adoption trends across countries, industries, and company sizes.
-          Key insights include top AI tools, industry-wise adoption rates, and enterprise vs startup comparisons.
-        </p>
-        <a class="btn" href="AI%20Data_Adoption%20Across%20World.pbix" download>Download Power BI Project</a>
-        <a class="btn" href="AI_Adoption%20Script.sql" download>Download SQL Script</a>
+      <!-- Project 6: AI Adoption Project -->
+      <div class="project-card floating" style="animation-delay: 1s;">
+        <img src="proj-ai.png" alt="AI Adoption Dashboard Preview" class="project-image">
+        <div class="project-overlay">
+          <div class="project-text">
+            <h3>AI Adoption Across the World</h3>
+            <p>Power BI + SQL analysis for AI adoption trends across countries, industries, and company sizes.</p>
+            <a href="AI%20Data_Adoption%20Across%20World.pbix" download>Download Power BI Project</a>
+            <a href="AI_Adoption%20Script.sql" download>Download SQL Script</a>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-  <h3>HR Data Dashboard (Power BI)</h3>
-  <img src="proj-hr.png" alt="HR Data Dashboard Preview">
-  <p>
-    Designed and developed an HR analytics dashboard in Power BI, enabling insights into employee performance, attrition, 
-    demographics, and workforce planning. Enhanced HR decision-making by identifying key trends and KPIs.
-  </p>
-  <a class="btn" href="HR%20DATA%20Dashboard.pbix" download>Download Power BI Project</a>
-</div>
+      <!-- Project 7: HR Dashboard -->
+      <div class="project-card floating" style="animation-delay: 1.2s;">
+        <img src="proj-hr.png" alt="HR Data Dashboard Preview" class="project-image">
+        <div class="project-overlay">
+          <div class="project-text">
+            <h3>HR Data Dashboard (Power BI)</h3>
+            <p>HR analytics dashboard in Power BI, enabling insights into performance, attrition, demographics, and workforce planning.</p>
+            <a href="HR%20DATA%20Dashboard.pbix" download>Download Power BI Project</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -222,7 +318,6 @@
   <section id="certs">
     <h2>Certifications</h2>
     <div class="certs">
-      <!-- Certification cards remain unchanged -->
       <div class="card">
         <h3>Business Analysis by Microsoft & LinkedIn</h3>
         <img src="cert-business-analysis.png" alt="Business Analysis Certificate Preview">
@@ -255,9 +350,7 @@
       </div>
       <div class="card">
         <h3>TATA – GenAI Powered Data Analytics Job Simulation</h3>
-        <img src="cert-tata.png" alt="TATA Internship Certificate Preview">
-        <p>Completed July 25, 2025 | Skills: EDA & Risk Profiling, AI Predictions, Data Storytelling, Collections Strategy.</p>
-        <a class="btn" href="TATA%20Internship.pdf" download>Download Certificate</a>
+        <img src="cert-tata.png" alt="TATA Internship Certificate
       </div>
     </div>
   </section>
