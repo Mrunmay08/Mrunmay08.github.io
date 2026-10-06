@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="#0b1220" name="theme-color"/><title>Mrunmay Kanade | Data Analyst &amp; BI Portfolio</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/><style>
+:root{
+  --bg:#07111f;--bg-2:#0b1627;--surface:rgba(255,255,255,.065);--surface-2:rgba(255,255,255,.095);
+  --stroke:rgba(255,255,255,.12);--text:#f7f9fc;--muted:#a9b5c6;--subtle:#7f8da1;
+  --brand:#4f8cff;--brand-2:#2dd4bf;--brand-soft:rgba(79,140,255,.14);
+  --shadow:0 24px 70px rgba(0,0,0,.28);--radius:22px;--max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{margin:0;color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;background:
+ radial-gradient(900px 500px at 8% -5%,rgba(79,140,255,.16),transparent 60%),
+ radial-gradient(800px 500px at 92% 18%,rgba(45,212,191,.08),transparent 60%),
+ linear-gradient(180deg,var(--bg),#081322 52%,#07111f);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(115deg,transparent 25%,rgba(255,255,255,.018) 50%,transparent 75%)}
+a{color:inherit}
+.skip-link{position:fixed;left:16px;top:-60px;z-index:1000;padding:10px 14px;border-radius:10px;background:#fff;color:#07111f;font-weight:700}.skip-link:focus{top:16px}
+header{position:sticky;top:14px;z-index:100;max-width:var(--max);margin:14px auto 0;padding:0 16px}
+.nav-wrap{min-height:62px;padding:9px 10px 9px 18px;display:flex;align-items:center;justify-content:space-between;gap:18px;border:1px solid var(--stroke);border-radius:18px;background:rgba(8,18,32,.76);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);box-shadow:0 14px 40px rgba(0,0,0,.22)}
+.brand{font-family:Manrope,sans-serif;font-size:1.15rem;font-weight:800;letter-spacing:-.04em;white-space:nowrap}.brand span{color:var(--brand)}
+nav{display:flex;align-items:center;justify-content:flex-end;gap:2px;flex-wrap:wrap}nav a{padding:8px 11px;border-radius:10px;color:#b9c4d3;text-decoration:none;font-size:.82rem;font-weight:600;transition:.2s ease}nav a:hover,nav a.active{background:rgba(255,255,255,.075);color:#fff}
+section{max-width:var(--max);margin:0 auto;padding:112px 24px 24px}
+.hero{min-height:calc(100vh - 92px);display:grid;place-items:center;text-align:center;padding-top:70px;padding-bottom:70px}.hero-inner{max-width:920px;margin:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border:1px solid rgba(45,212,191,.2);background:rgba(45,212,191,.07);border-radius:999px;color:#c8fff6;font-size:.76rem;font-weight:700;letter-spacing:.02em}.dot{width:7px;height:7px;border-radius:50%;background:var(--brand-2);box-shadow:0 0 0 5px rgba(45,212,191,.08)}
+h1,h2,h3{font-family:Manrope,Inter,sans-serif}h1{margin:22px 0 18px;font-size:clamp(3.1rem,7vw,6.1rem);line-height:.98;letter-spacing:-.065em;font-weight:800}h2{font-size:clamp(2rem,4vw,3.15rem);line-height:1.05;letter-spacing:-.05em;margin:5px 0 0}h3{letter-spacing:-.025em} .gradient-text{background:linear-gradient(100deg,#fff 10%,#7db0ff 60%,#66e7d6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:760px;margin:0 auto;color:#b7c2d2;font-size:1.05rem;line-height:1.8}.hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border:1px solid var(--stroke);border-radius:12px;background:rgba(255,255,255,.055);color:#f6f8fb;text-decoration:none;font-size:.85rem;font-weight:700;transition:.22s ease}.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}.btn.primary{background:var(--brand);border-color:var(--brand);box-shadow:0 10px 30px rgba(79,140,255,.22)}.btn.primary:hover{background:#6a9eff}.hero-meta{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:25px;color:#8796aa;font-size:.77rem}.hero-meta span{display:inline-flex;align-items:center;gap:7px}.hero-meta i{color:#7aa7ff}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:28px}.section-head>div{min-width:250px}.section-head p{max-width:520px;margin:0;color:var(--muted);font-size:.94rem;line-height:1.65}.section-kicker{text-transform:uppercase;letter-spacing:.14em;font-size:.68rem;font-weight:800;color:#6f9cff}
+.glass,.card{border:1px solid var(--stroke);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.035));backdrop-filter:blur(18px) saturate(135%);-webkit-backdrop-filter:blur(18px) saturate(135%);box-shadow:var(--shadow)}.card{border-radius:var(--radius);padding:24px}.card h3{margin:0 0 8px;font-size:1.02rem}.card p{color:var(--muted);font-size:.88rem;line-height:1.65}
+.about-grid{display:grid;grid-template-columns:280px 1fr;gap:22px}.profile-card{text-align:center;padding:24px;border-radius:var(--radius)}.profile-card img{width:170px;height:170px;object-fit:cover;border-radius:30px;border:1px solid var(--stroke);box-shadow:0 18px 45px rgba(0,0,0,.28)}.profile-card h3{margin:17px 0 3px}.about-copy{color:#c2ccd9;line-height:1.8;font-size:.93rem}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}.stat{padding:15px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(0,0,0,.12)}.stat strong{display:block;color:#fff;font-family:Manrope;font-size:1rem}.stat span{display:block;color:var(--subtle);font-size:.7rem;margin-top:2px}
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.skill{min-height:170px}.skill h3 i{color:#77a5ff;margin-right:7px}.skill p{margin-bottom:0}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project-card{position:relative;min-height:260px;border-radius:18px;overflow:hidden;border:1px solid var(--stroke);background:#0b1422;box-shadow:0 18px 45px rgba(0,0,0,.24);transition:transform .25s ease,box-shadow .25s ease}.project-card:hover{transform:translateY(-5px);box-shadow:0 28px 60px rgba(0,0,0,.32)}.project-image{display:block;width:100%;height:100%;min-height:260px;object-fit:cover}.project-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 18%,rgba(5,12,22,.1) 40%,rgba(5,12,22,.96) 100%)}.project-overlay{position:absolute;inset:auto 0 0;z-index:2;padding:22px;background:linear-gradient(180deg,transparent,rgba(4,10,18,.9) 35%,rgba(4,10,18,.98));}.project-text{max-width:100%}.project-text h3{font-size:1.05rem;margin:0 0 7px}.project-text p{margin:0 0 13px;color:#b9c5d4;font-size:.79rem;line-height:1.5}.project-text a{display:inline-flex;align-items:center;gap:6px;color:#dbe8ff;text-decoration:none;font-size:.76rem;font-weight:800;border-bottom:1px solid rgba(125,176,255,.35);padding-bottom:2px}.project-text a:hover{color:#fff}
+.experience-timeline{position:relative;padding-left:24px;border-left:1px solid rgba(125,176,255,.22)}.timeline-card{position:relative;max-width:900px;margin-left:12px}.timeline-card:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;left:-43px;top:28px;background:var(--brand);box-shadow:0 0 0 6px rgba(79,140,255,.1)}.timeline-badge{display:inline-block;width:100%;margin-bottom:2px}.timeline-card ul{margin:14px 0 0;padding-left:18px;color:#aebacc;font-size:.86rem}.timeline-card li{margin:7px 0}
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.certs .card{display:flex;flex-direction:column}.certs img{width:100%;height:175px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);margin:10px 0 14px}.certs .btn{margin-top:auto;align-self:flex-start}.resume-img{display:block;width:100%;max-height:680px;object-fit:contain;object-position:top;margin:12px 0 18px;border-radius:14px;border:1px solid var(--stroke);background:#fff}.contact-card{max-width:900px;margin:0 auto;padding:42px;text-align:center;border-radius:26px}.contact-card h2{margin-bottom:12px}.contact-card p{color:var(--muted);margin:0}.contact-links{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:22px}footer{max-width:var(--max);margin:auto;padding:55px 24px 30px;text-align:center;color:#68778b;font-size:.75rem}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:1000px){nav a{padding:7px 8px;font-size:.76rem}.skills{grid-template-columns:repeat(2,1fr)}.portfolio-grid,.certs{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr}.profile-card{display:flex;align-items:center;text-align:left;gap:20px}.profile-card img{width:125px;height:125px}.profile-card h3{margin-top:0}}
+@media(max-width:720px){header{top:8px;margin-top:8px}.nav-wrap{align-items:flex-start;padding:9px 10px}.brand{padding-top:7px}nav{justify-content:flex-end;max-width:calc(100% - 48px)}nav a{font-size:.68rem;padding:6px 7px}section{padding:88px 18px 18px}.hero{min-height:calc(100vh - 75px);padding-top:50px}.hero p{font-size:.93rem}.hero-meta{gap:9px 14px}.section-head{display:block}.section-head p{margin-top:10px}.portfolio-grid,.certs,.skills{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr 1fr}.contact-card{padding:30px 20px}.project-card,.project-image{min-height:245px;height:245px}}
+@media(max-width:480px){h1{font-size:3rem}.profile-card{display:block;text-align:center}.profile-card img{width:145px;height:145px}.profile-card h3{margin-top:14px}.stats{gap:7px}.stat{padding:12px 8px}.stat strong{font-size:.85rem}.stat span{font-size:.62rem}.experience-timeline{padding-left:16px}.timeline-card{margin-left:8px}.timeline-card:before{left:-29px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.project-card,.btn{transition:none}}
+</style></head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a><header class="glass">
+<div class="nav-wrap">
+<div class="brand">MK<span>.</span></div>
+<nav>
+<a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+<a href="#experience">Experience</a><a href="#certs">Certifications</a><a href="#resume">Resume</a><a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+
+
+
+
+
+
+
+
+
+
+<main id="main"><section class="hero" id="home">
+<div class="hero-inner">
+<div class="eyebrow"><span class="dot"></span> Available for Data &amp; BI opportunities</div>
+<h1>Turning <span class="gradient-text">data</span><br/>into decisions.</h1>
+<p>I'm <b>Mrunmay Nilesh Kanade</b>, an MBA in Business Analytics and Microsoft Certified Fabric Analytics Engineer. I build clear, business-ready analytics solutions with Power BI, SQL, Microsoft Fabric, Python and Advanced Excel.</p>
+<div class="hero-actions"><a class="btn primary" href="#projects"><i class="fa-solid fa-arrow-down"></i> Explore my work</a><a class="btn" href="#contact">Let's connect</a></div><div class="hero-meta"><span><i aria-hidden="true" class="fa-solid fa-location-dot"></i> Pune, India</span><span><i aria-hidden="true" class="fa-solid fa-graduation-cap"></i> MBA · Business Analytics</span><span><i aria-hidden="true" class="fa-solid fa-certificate"></i> Microsoft Certified · DP-600</span></div>
+</div>
+</section><section id="about">
+<div class="section-head"><div><div class="section-kicker">Profile</div><h2>About me</h2></div><p>Analytics with a business mindset — clean data, useful dashboards and insights people can act on.</p></div>
+<div class="about-grid">
+<div class="profile-card glass"><img alt="Mrunmay Kanade" src="profile.PNG"/><h3>Mrunmay Kanade</h3><p style="color:var(--muted)">Data Analyst · MBA (Business Analytics)</p></div>
+<div class="card glass">
+<div class="about-copy">Hello! I'm <b>Mrunmay Nilesh Kanade</b>, an MBA in <b>Business Analytics</b> with hands-on experience across SQL, Power BI, Microsoft Fabric, Python and Advanced Excel.<br/><br/>
+      I hold the <b>Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)</b>, with a focus on Lakehouse, Warehouse, Semantic Models, DAX and Power BI. I enjoy transforming complex datasets into actionable business insights through interactive dashboards and modern Business Intelligence solutions.</div>
+<div class="stats"><div class="stat"><strong>DP-600</strong><span>Microsoft Certified</span></div><div class="stat"><strong>BI + SQL</strong><span>Core toolkit</span></div><div class="stat"><strong>10+</strong><span>Portfolio projects</span></div></div>
+</div>
+</div>
+</section><section id="skills"><div class="section-head"><div><div class="section-kicker">Toolkit</div><h2>Skills &amp; expertise</h2></div><p>A practical stack for analytics, reporting, data modeling and business intelligence.</p></div>
+<div class="skills">
+<div class="card glass skill"><h3><i class="fa-solid fa-database"></i> SQL &amp; Databases</h3><p>MySQL, SQL Workbench, joins, CTEs, queries.</p></div>
+<div class="card glass skill"><h3><i class="fa-solid fa-chart-line"></i> Data Visualization</h3><p>Power BI, Tableau, custom DAX measures.</p></div>
+<div class="card glass skill"><h3><i class="fa-brands fa-python"></i> Python</h3><p>Pandas, NumPy, Matplotlib, Seaborn.</p></div>
+<div class="card glass skill"><h3><i class="fa-solid fa-table"></i> Excel</h3><p>Advanced Excel, Pivot tables, automation.</p></div>
+</div>
+</section><section id="projects"><div class="section-head"><div><div class="section-kicker">Selected work</div><h2>Projects</h2></div><p>Real-world style analytics work spanning Power BI, SQL, Python and Microsoft Fabric.</p></div>
+<div class="portfolio-grid">
+<!-- Project 1: Adidas Sales Analysis -->
+<div class="project-card">
+<img alt="Adidas Sales Analysis Preview" class="project-image" src="adidas_dashboard.jpg"/>
+<div class="project-overlay">
+<div class="project-text">
+<h3>Adidas Sales Analysis</h3>
+<p>Interactive Power BI dashboard analyzing sales, profitability, and market trends with forecasting insights.</p>
+<a download="" href="Adidas_Data_Analysis.pbix">View Project</a>
+</div>
+</div>
+</div>
+<!-- Project 2: Pizza Sales SQL Analysis -->
+<div class="project-card">
+<img alt="Pizza Sales SQL Analysis Preview" class="project-image" src="pizza_Sales_SQL.jpg"/>
+<div class="project-overlay">
+<div class="project-text">
+<h3>Pizza Sales Analysis</h3>
+<p>SQL-based analysis identifying top-selling pizzas, customer preferences, and performance trends.</p>
+<a href="Pizza_Sales_Analysis.pdf" target="_blank">View Project</a>
+</div>
+</div>
+</div>
+<!-- Project 3: Q-Commerce Market Study -->
+<div class="project-card">
+<img alt="Q-Commerce Market Analysis Preview" class="project-image" src="proj-qcommerce.png"/>
+<div class="project-overlay">
+<div class="project-text">
+<h3>Q-Commerce Analysis</h3>
+<p>Strategic research project on consumer behavior and market dynamics using Excel &amp; Power BI.</p>
+<a href="Q-Commerce's_Data_Analysis.pdf" target="_blank">View Project</a>
+</div>
+</div>
+</div>
+<!-- Project 4: IPL Analysis Dashboard -->
+<div class="project-card">
+<img alt="IPL Analysis Preview" class="project-image" src="proj-ipl.png"/>
+<div class="project-overlay">
+<div class="project-text">
+<h3>IPL Analysis Dashboard</h3>
+<p>Interactive dashboard analyzing IPL data using Python and Power BI, highlighting player performance and match insights.</p>
+<a href="Project%20IPL%20Analysis.html" target="_blank">View Dashboard</a>
+</div>
+</div>
+</div>
+<!-- Project 5: TATA Motors Desk Research -->
+<div class="project-card">
+<img alt="TATA Desk Research Preview" class="project-image" src="proj-tata.png"/>
+<div class="project-overlay">
+<div class="project-text">
+<h3>TATA Motors Desk Research</h3>
+<p>Desk research on TATA Motors (JLR), covering financials, marketing mix, and distribution strategies.</p>
+<a download="" href="Mrunmay%20final%20Desk.pdf">Download Report</a>
+</div>
+</div>
+</div>
+<!-- Project 6: AI Adoption Project -->
+<div class="project-card">
+<img alt="AI Adoption Dashboard Preview" class="project-image" src="proj-ai.png"/>
+<div class="project-overlay">
+<div class="project-text">
+<h3>AI Adoption Across the World</h3>
+<p>Power BI + SQL analysis for AI adoption trends across countries, industries, and company sizes.</p>
+<a download="" href="AI%20Data_Adoption%20Across%20World.pbix">Download Power BI Project</a>
+<a download="" href="AI_Adoption%20Script.sql">Download SQL Script</a>
+</div>
+</div>
+</div>
+<!-- Project 7: HR Dashboard -->
+<div class="project-card">
+<img alt="HR Data Dashboard Preview" class="project-image" src="proj-hr.png"/>
+<div class="project-overlay">
+<div class="project-text">
+<h3>HR Data Dashboard (Power BI)</h3>
+<p>HR analytics dashboard in Power BI, enabling insights into performance, attrition, demographics, and workforce planning.</p>
+<a download="" href="HR DATA ANALYTICS.pdf">Download Power BI Project</a>
+</div>
+</div>
+</div>
+<!-- Project X: Credit Card Customer & Transaction Analysis -->
+<div class="project-card">
+<img alt="Credit Card Analysis Power BI Preview" class="project-image" src="proj-credit-card.png"/>
+<div class="project-overlay">
+<div class="project-text">
+<h3>Credit Card Customer &amp; Transaction Analysis</h3>
+<p>
+Power BI dashboard analyzing ₹55M revenue, 656K transactions,
+customer demographics, card usage patterns, and spending behavior
+to drive data-driven financial insights.
+</p>
+<a download="" href="Credit_Card_Transaction_Report.pbix">Download Power BI</a>
+<br><br>
+</br></br></div>
+</div>
+</div>
+<div class="project-card">
+<img alt="WS Sales Analysis Preview" class="project-image" src="ws-sales-analysis-preview.png"/>
+<div class="project-overlay">
+<div class="project-text">
+<h3>WS Sales Analysis Dashboard</h3>
+<p>Professional Microsoft Fabric &amp; Power BI sales analytics dashboard featuring KPI tracking, regional performance, product insights, and interactive business intelligence visualizations.</p>
+<a download="" href="Fabric_Sales_Report.pbix">Download Power BI</a>
+</div>
+</div>
+</div>
+</div>
+</section><section id="experience"><div class="section-head"><div><div class="section-kicker">Career</div><h2>Experience</h2></div><p>Hands-on analytics experience focused on data quality, reporting and operational insights.</p></div>
+<div class="experience-timeline">
+<div class="card timeline-card">
+<span class="timeline-badge"></span><h3>Data Analyst Intern</h3>
+<p><b>Technokraft Services LLP.</b> (Aug 2025 – Sep 2025)</p>
+<ul style="text-align:left">
+<li>Analyzed and validated 5,000+ records ensuring 100% accuracy.</li>
+<li>Developed SQL queries and insights using joins, subqueries, and CTEs.</li>
+<li>Created Power BI dashboards aligned with operations KPIs.</li>
+</ul>
+</div>
+<!-- New Experience to be added here -->
+</div>
+</section><section id="certs"><div class="section-head"><div><div class="section-kicker">Credentials</div><h2>Certifications</h2></div><p>Industry-recognized credentials supporting analytics and modern data platform skills.</p></div>
+<div class="certs">
+<div class="card">
+<h3>Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)</h3>
+<a href="https://learn.microsoft.com/api/credentials/share/en-gb/MrunmayNileshKanade-5556/7FA4B5EE156318C4?sharingId=C257FE527E371CBC" target="_blank">
+<img alt="Microsoft Certified Fabric Analytics Engineer Associate Certificate Preview" src="Microsoft Certified Fabric Analytics Engineer Associate.png"/>
+</a>
+<p>
+Microsoft Certified • DP-600<br/>
+Issued: July 31, 2026<br/>
+Credential ID: 7FA4B5EE156318C4
+</p>
+<a class="btn" href="https://learn.microsoft.com/api/credentials/share/en-gb/MrunmayNileshKanade-5556/7FA4B5EE156318C4?sharingId=C257FE527E371CBC" target="_blank">
+Verify Credential
+</a>
+</div>
+<!-- New Certification: Business Intelligence with Power BI (IIM Bangalore - SWAYAM) -->
+<div class="card">
+<h3>Business Intelligence with Power BI (IIM Bangalore - SWAYAM)</h3>
+<img alt="Business Intelligence Power BI Certificate Preview" src="cert-iim-powerbi.png"/>
+<p>
+    SWAYAM Online Certification | Business Intelligence with Power BI:
+    From Data to Strategic Decisions.<br>
+    Score: 72.8% | Issued Jan 2026
+  </br></p>
+<a class="btn" download="" href="IIM Certificate.pdf">
+    Download Certificate
+  </a>
+</div>
+<div class="card">
+<h3>Business Analysis by Microsoft &amp; LinkedIn</h3>
+<img alt="Business Analysis Certificate Preview" src="cert-business-analysis.png"/>
+<p>Career Essentials in Business Analysis.</p>
+<a class="btn" download="" href="Business%20Analysis%20by%20Microsoft%20and%20LinkedIn.pdf">Download Certificate</a>
+</div>
+<div class="card">
+<h3>Career Essentials in GitHub</h3>
+<img alt="GitHub Certificate Preview" src="cert-github.png"/>
+<p>GitHub Professional Certificate Program.</p>
+<a class="btn" download="" href="Career%20Essentials%20in%20GitHub%20Professional%20Certificate.pdf">Download Certificate</a>
+</div>
+<div class="card">
+<h3>Data Analysis by Microsoft &amp; LinkedIn</h3>
+<img alt="Data Analysis Certificate Preview" src="cert-data-analysis.png"/>
+<p>Career Essentials in Data Analysis.</p>
+<a class="btn" download="" href="Data%20Analysis%20by%20Microsoft%20and%20LinkedIn.pdf">Download Certificate</a>
+</div>
+<div class="card">
+<h3>Deloitte – Data Analytics Job Simulation</h3>
+<img alt="Deloitte Certificate Preview" src="cert-deloitte.png"/>
+<p>Completed July 23, 2025 | Skills: Data Analysis, Forensic Technology.</p>
+<a class="btn" download="" href="Deloitte%20Certificate.pdf">Download Certificate</a>
+</div>
+<div class="card">
+<h3>Microsoft Azure AI Essentials</h3>
+<img alt="Azure AI Essentials Certificate Preview" src="cert-azure-ai.png"/>
+<p>Completed May 30, 2025 | Skills: Machine Learning, Azure AI Studio, Generative AI.</p>
+<a class="btn" download="" href="Microsoft%20Azure%20AI%20Essentials%20Professional%20Certificate%20by%20Microsoft%20and%20LinkedIn.pdf">Download Certificate</a>
+</div>
+<div class="card">
+<h3>TATA – GenAI Powered Data Analytics Job Simulation</h3>
+<img alt="TATA Certificate Preview" src="cert-tata.png"/>
+<p>Job Simulation in Generative AI and Data Analytics.</p>
+<a class="btn" download="" href="TATA%20GenAI%20Certificate.pdf">Download Certificate</a>
+</div>
+<!-- New Certification: Python -->
+<div class="card">
+<h3>Python for Data Analysis</h3>
+<img alt="Python Certificate Preview" src="cert-python.png"/>
+<p>Completed professional training in Python (Pandas, NumPy, Matplotlib, Seaborn).</p>
+<a class="btn" download="" href="Python.pdf">Download Certificate</a>
+</div>
+<!-- New Certification: SQL -->
+<div class="card">
+<h3>SQL (IBM Cognitive Class)</h3>
+<img alt="SQL Certificate Preview" src="cert-sql.png"/>
+<p>IBM DB0101EN – Cognitive Class Certification in SQL &amp; Databases.</p>
+<a class="btn" download="" href="SQL.pdf">Download Certificate</a>
+</div>
+<div class="card glass skill"><h3>IBM Data Science Professional Certificate</h3><img alt="IBM Data Science Certificate Preview" src="cert-ibm-ds.png"/><p>Hands-on introduction to tools and techniques for data science — Python, SQL, data visualisation and machine learning fundamentals.</p><a class="btn" download="True" href="IBM Data Science.pdf">Download Certificate</a></div><div class="card glass skill"><h3>Machine Learning Certificate (IBM Cognitive Class)</h3><img alt="Machine Learning Certificate Preview" src="cert-ml.png"/><p>Core machine learning concepts, model evaluation, and practical exercises using common ML algorithms.</p><a class="btn" download="True" href="ML.pdf">Download Certificate</a></div></div>
+</section><section id="resume"><div class="section-head"><div><div class="section-kicker">Profile</div><h2>Resume</h2></div><p>Download or view my latest resume.</p></div>
+<div class="card" style="max-width:800px;margin:auto;">
+<h3>Mrunmay Kanade - Resume</h3>
+<img alt="Resume Preview" class="resume-img" src="resume-preview.png"/>
+<a class="btn" download="" href="Mrunmay_Kanade_Resume.pdf">Download Resume</a>
+<a class="btn" href="Mrunmay_Kanade_Resume.pdf" target="_blank">View Resume</a>
+</div>
+</section><section id="contact"><div class="contact-card glass"><div class="section-kicker">Get in touch</div><h2>Let’s build something useful.</h2><p>
+    Feel free to connect with me via email or LinkedIn.
+  </p>
+<div class="contact-links">
+<a class="btn" href="mailto:mrunmaykanade4@gmail.com?subject=Portfolio%20Contact&amp;body=Hello%20Mrunmay,%0D%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20connect.">
+      Email Me
+    </a>
+<a class="btn" href="https://github.com/Mrunmay08" target="_blank">GitHub</a>
+<a class="btn" href="http://linkedin.com/in/mrunmay-kanade-133296368" target="_blank">LinkedIn</a>
+</div></div>
+</section><footer>
+<p>© <span id="y"></span> Mrunmay Nilesh Kanade</p>
+</footer></main><script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const sections=[...document.querySelectorAll('main section[id]')];
+  const links=[...document.querySelectorAll('nav a')];
+  sections.forEach(s=>s.classList.add('reveal'));
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  sections.forEach(s=>io.observe(s));
+  const navIO=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-35% 0px -55% 0px',threshold:0});
+  sections.forEach(s=>navIO.observe(s));
+  const y=document.getElementById('y'); if(y)y.textContent=new Date().getFullYear();
+});
+</script></body>
+</html>
