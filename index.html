@@ -37,6 +37,16 @@ h1,h2,h3{font-family:Manrope,Inter,sans-serif}h1{margin:22px 0 18px;font-size:cl
 @media(max-width:720px){header{top:8px;margin-top:8px}.nav-wrap{align-items:flex-start;padding:9px 10px}.brand{padding-top:7px}nav{justify-content:flex-end;max-width:calc(100% - 48px)}nav a{font-size:.68rem;padding:6px 7px}section{padding:88px 18px 18px}.hero{min-height:calc(100vh - 75px);padding-top:50px}.hero p{font-size:.93rem}.hero-meta{gap:9px 14px}.section-head{display:block}.section-head p{margin-top:10px}.portfolio-grid,.certs,.skills{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr 1fr}.contact-card{padding:30px 20px}.project-card,.project-image{min-height:245px;height:245px}}
 @media(max-width:480px){h1{font-size:3rem}.profile-card{display:block;text-align:center}.profile-card img{width:145px;height:145px}.profile-card h3{margin-top:14px}.stats{gap:7px}.stat{padding:12px 8px}.stat strong{font-size:.85rem}.stat span{font-size:.62rem}.experience-timeline{padding-left:16px}.timeline-card{margin-left:8px}.timeline-card:before{left:-29px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.project-card,.btn{transition:none}}
+
+/* Professional skills system */
+.skills-professional{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.skill-domain{position:relative;padding:25px 25px 23px;border-radius:20px;overflow:hidden;transition:transform .22s ease,border-color .22s ease,background .22s ease}
+.skill-domain:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--brand),var(--brand-2));opacity:.75}
+.skill-domain:hover{transform:translateY(-3px);border-color:rgba(125,176,255,.28);background:linear-gradient(145deg,rgba(255,255,255,.095),rgba(255,255,255,.04))}
+.skill-domain-head{display:flex;align-items:center;gap:14px;margin-bottom:13px}.skill-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:rgba(79,140,255,.12);border:1px solid rgba(125,176,255,.18);color:#86adff;font-size:1rem}.skill-label{display:block;text-transform:uppercase;letter-spacing:.13em;color:#71839c;font-size:.62rem;font-weight:800;margin-bottom:2px}.skill-domain h3{margin:0;font-size:1.18rem;letter-spacing:-.03em}.skill-summary{margin:0 0 18px;color:#aebacc;font-size:.82rem;line-height:1.6;max-width:560px}.skill-list{display:flex;flex-wrap:wrap;gap:7px}.skill-list span{padding:6px 9px;border-radius:8px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);color:#d4dce7;font-size:.69rem;font-weight:600;line-height:1.2}.skill-list span:hover{border-color:rgba(125,176,255,.25);color:#fff}
+.skill-footer{display:grid;grid-template-columns:1fr 1fr;margin-top:18px;border:1px solid var(--stroke);border-radius:16px;background:rgba(255,255,255,.035);overflow:hidden}.skill-footer>div{padding:15px 19px;display:flex;align-items:center;gap:10px}.skill-footer>div+div{border-left:1px solid rgba(255,255,255,.08)}.skill-footer strong{font-size:.7rem;color:#dce7f8;white-space:nowrap}.skill-footer span{font-size:.7rem;color:#8291a5}
+@media(max-width:1000px){.skills-professional{grid-template-columns:1fr}.skill-footer{grid-template-columns:1fr}.skill-footer>div+div{border-left:0;border-top:1px solid rgba(255,255,255,.08)}}
+@media(max-width:720px){.skill-domain{padding:21px}.skill-footer>div{display:block}.skill-footer strong{display:block;margin-bottom:3px}}
 </style></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a><header class="glass">
@@ -75,13 +85,73 @@ h1,h2,h3{font-family:Manrope,Inter,sans-serif}h1{margin:22px 0 18px;font-size:cl
 <div class="stats"><div class="stat"><strong>DP-600</strong><span>Microsoft Certified</span></div><div class="stat"><strong>BI + SQL</strong><span>Core toolkit</span></div><div class="stat"><strong>10+</strong><span>Portfolio projects</span></div></div>
 </div>
 </div>
-</section><section id="skills"><div class="section-head"><div><div class="section-kicker">Toolkit</div><h2>Skills &amp; expertise</h2></div><p>A practical stack for analytics, reporting, data modeling and business intelligence.</p></div>
-<div class="skills">
-<div class="card glass skill"><h3><i class="fa-solid fa-database"></i> SQL &amp; Databases</h3><p>MySQL, SQL Workbench, joins, CTEs, queries.</p></div>
-<div class="card glass skill"><h3><i class="fa-solid fa-chart-line"></i> Data Visualization</h3><p>Power BI, Tableau, custom DAX measures.</p></div>
-<div class="card glass skill"><h3><i class="fa-brands fa-python"></i> Python</h3><p>Pandas, NumPy, Matplotlib, Seaborn.</p></div>
-<div class="card glass skill"><h3><i class="fa-solid fa-table"></i> Excel</h3><p>Advanced Excel, Pivot tables, automation.</p></div>
-</div>
+</section><section id="skills">
+  <div class="section-head">
+    <div><div class="section-kicker">Core capabilities</div><h2>Skills &amp; expertise</h2></div>
+    <p>Business-focused analytics capabilities across data analysis, Power BI development and Microsoft Fabric.</p>
+  </div>
+
+  <div class="skills-professional">
+    <article class="skill-domain glass">
+      <div class="skill-domain-head">
+        <span class="skill-icon"><i class="fa-solid fa-chart-line"></i></span>
+        <div><span class="skill-label">01 · Analytics</span><h3>Data Analyst</h3></div>
+      </div>
+      <p class="skill-summary">Turn raw business data into reliable insights, reports and decision-ready analysis.</p>
+      <div class="skill-list">
+        <span>SQL &amp; Querying</span><span>Data Cleaning</span><span>Exploratory Data Analysis</span>
+        <span>Advanced Excel</span><span>Power Query</span><span>Pivot Tables</span>
+        <span>Python · Pandas · NumPy</span><span>Business Analysis</span>
+        <span>KPI &amp; MIS Reporting</span><span>Trend &amp; Variance Analysis</span>
+      </div>
+    </article>
+
+    <article class="skill-domain glass">
+      <div class="skill-domain-head">
+        <span class="skill-icon"><i class="fa-solid fa-chart-column"></i></span>
+        <div><span class="skill-label">02 · BI Development</span><h3>Power BI Developer</h3></div>
+      </div>
+      <p class="skill-summary">Build scalable, user-focused dashboards and semantic models for business reporting.</p>
+      <div class="skill-list">
+        <span>Power BI Desktop</span><span>DAX</span><span>Data Modeling</span>
+        <span>Star Schema</span><span>Power Query · M</span><span>Semantic Models</span>
+        <span>Measures &amp; KPIs</span><span>Drill-through &amp; Tooltips</span>
+        <span>Row-Level Security</span><span>Dashboard UX &amp; Storytelling</span>
+      </div>
+    </article>
+
+    <article class="skill-domain glass">
+      <div class="skill-domain-head">
+        <span class="skill-icon"><i class="fa-solid fa-layer-group"></i></span>
+        <div><span class="skill-label">03 · Modern Data Platform</span><h3>Microsoft Fabric</h3></div>
+      </div>
+      <p class="skill-summary">Work across the modern analytics stack from data ingestion and storage to semantic reporting.</p>
+      <div class="skill-list">
+        <span>Microsoft Fabric</span><span>Lakehouse</span><span>Warehouse</span>
+        <span>Dataflows &amp; Pipelines</span><span>Semantic Models</span><span>Fabric Notebooks</span>
+        <span>SQL Analytics</span><span>ETL / ELT Concepts</span><span>Data Transformation</span>
+        <span>Power BI Integration</span>
+      </div>
+    </article>
+
+    <article class="skill-domain glass">
+      <div class="skill-domain-head">
+        <span class="skill-icon"><i class="fa-solid fa-database"></i></span>
+        <div><span class="skill-label">04 · Data &amp; Cloud</span><h3>Technical Toolkit</h3></div>
+      </div>
+      <p class="skill-summary">Supporting technologies used to prepare, transform, query and deliver analytics solutions.</p>
+      <div class="skill-list">
+        <span>MySQL</span><span>SQL Workbench</span><span>CTEs &amp; Joins</span>
+        <span>Azure Data Factory</span><span>Azure Data Lake</span><span>SSAS</span>
+        <span>Tableau</span><span>Python</span><span>GitHub</span><span>Data Visualization</span>
+      </div>
+    </article>
+  </div>
+
+  <div class="skill-footer">
+    <div><strong>Microsoft Certified</strong><span>Fabric Analytics Engineer Associate · DP-600</span></div>
+    <div><strong>Primary focus</strong><span>Power BI · DAX · SQL · Fabric · Data Modeling</span></div>
+  </div>
 </section><section id="projects"><div class="section-head"><div><div class="section-kicker">Selected work</div><h2>Projects</h2></div><p>Real-world style analytics work spanning Power BI, SQL, Python and Microsoft Fabric.</p></div>
 <div class="portfolio-grid">
 <!-- Project 1: Adidas Sales Analysis -->
